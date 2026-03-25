@@ -2,7 +2,7 @@ name: "Nitro Fusion Publish"
 description: "Publishes GraphQL source schemas to the Nitro registry"
 author: "ChilliCream"
 branding:
-  icon: "upload-cloud"
+  icon: "send"
   color: "purple"
 
 inputs:
