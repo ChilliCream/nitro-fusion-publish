@@ -14,6 +14,7 @@ async function executeCommand(): Promise<void> {
     const stage = core.getInput("stage", { required: true });
     const apiId = core.getInput("api-id", { required: true });
     const apiKey = core.getInput("api-key", { required: true });
+    const sourceMetadata = getSourceMetadata();
     const cloudUrl = core.getInput("cloud-url") || null;
 
     const args: string[] = [
@@ -25,6 +26,8 @@ async function executeCommand(): Promise<void> {
       stage,
       "--api-id",
       apiId,
+      "--source-metadata",
+      JSON.stringify(sourceMetadata),
     ];
 
     if (cloudUrl) {
