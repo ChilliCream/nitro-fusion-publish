@@ -14,6 +14,8 @@ A GitHub Action that publishes GraphQL source schemas to the Nitro registry.
     source-schemas:
       - products # This will look for products@<tag>
       - reviews@2.0.0
+    # Optional
+    cloud-url: <cloud-url>
 ```
 
 ## Inputs
