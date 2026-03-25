@@ -1,0 +1,28 @@
+name: "Nitro Fusion Publish"
+description: "Publishes GraphQL source schemas to the Nitro registry"
+author: "ChilliCream"
+branding:
+  icon: "upload-cloud"
+  color: "purple"
+
+inputs:
+  tag:
+    description: "The tag of the schema version to deploy"
+    required: true
+  stage:
+    description: "The name of the stage"
+    required: true
+  api-id:
+    description: "The ID of the API"
+    required: true
+  api-key:
+    description: "API key for authentication"
+    required: true
+    secret: true
+  cloud-url:
+    description: "The URL of the Nitro registry"
+    required: false
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

@@ -1,0 +1,26 @@
+{
+  "name": "@chillicream/nitro-fusion-publish",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChilliCream/nitro-fusion-publish.git"
+  },
+  "author": "ChilliCream",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js --source-map"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4"
+  },
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.0.0",
+    "@actions/tool-cache": "^4.0.0",
+    "@chillicream/nitro-github-actions": "ChilliCream/nitro-github-actions"
+  }
+}
