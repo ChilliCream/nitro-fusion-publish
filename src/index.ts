@@ -6,9 +6,9 @@ import {
 } from "@chillicream/nitro-github-actions";
 import pkg from "../package.json" with { type: "json" };
 
-const nitroVersion = pkg.version;
+const nitroVersion: string = pkg.version;
 
-async function executeCommand() {
+async function executeCommand(): Promise<void> {
   try {
     const tag = core.getInput("tag", { required: true });
     const stage = core.getInput("stage", { required: true });
@@ -16,7 +16,7 @@ async function executeCommand() {
     const apiKey = core.getInput("api-key", { required: true });
     const cloudUrl = core.getInput("cloud-url") || null;
 
-    const args = [
+    const args: string[] = [
       "fusion",
       "publish",
       "--tag",
@@ -36,9 +36,7 @@ async function executeCommand() {
       NITRO_API_KEY: apiKey,
     };
 
-    const options = { env };
-
-    const exitCode = await exec.exec("nitro", args, options);
+    const exitCode = await exec.exec("nitro", args, { env });
 
     if (exitCode !== 0) {
       core.setFailed(`Nitro CLI exited with code ${exitCode}`);
@@ -48,12 +46,10 @@ async function executeCommand() {
   }
 }
 
-async function run() {
+async function run(): Promise<void> {
   await installNitro(nitroVersion);
 
-  const sourceMetadata = await getSourceMetadata();
-
-  await executeCommand(sourceMetadata);
+  await executeCommand();
 }
 
 run();

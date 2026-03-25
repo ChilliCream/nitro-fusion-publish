@@ -87,20 +87,22 @@ __metadata:
     "@actions/exec": "npm:^3.0.0"
     "@actions/github": "npm:^9.0.0"
     "@actions/tool-cache": "npm:^4.0.0"
-    "@chillicream/nitro-github-actions": ChilliCream/nitro-github-actions
+    "@chillicream/nitro-github-actions": "file:../nitro-github-actions"
+    "@types/node": "npm:^22.0.0"
     "@vercel/ncc": "npm:^0.38.4"
+    typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
 
-"@chillicream/nitro-github-actions@ChilliCream/nitro-github-actions":
+"@chillicream/nitro-github-actions@file:../nitro-github-actions::locator=%40chillicream%2Fnitro-fusion-publish%40workspace%3A.":
   version: 0.0.1
-  resolution: "@chillicream/nitro-github-actions@https://github.com/ChilliCream/nitro-github-actions.git#commit=5332e3223fc415bb2ea6af854937f2f68b6ca6a0"
+  resolution: "@chillicream/nitro-github-actions@file:../nitro-github-actions#../nitro-github-actions::hash=aeb26d&locator=%40chillicream%2Fnitro-fusion-publish%40workspace%3A."
   peerDependencies:
     "@actions/core": ^3.0.0
     "@actions/exec": ^3.0.0
     "@actions/github": ^9.0.0
     "@actions/tool-cache": ^4.0.0
-  checksum: 10c0/35e13cffd4b9b1dd781115c38d067ded4d22e8c40e6a08f425d43cd0f1b5c9a2811ba2dcd9cacd98a11a167184ed127d3cfeb9a1e53c0cbc295fdea6be0f085c
+  checksum: 10c0/fabf27714d629f2ed65fb70f67fce261a98e044d0a6dbfb7a96687c61a3ebfe5fc324cd7a17d98f6902ff856777a373e4f64fecc4a84871e48b35aa0a820e615
   languageName: node
   linkType: hard
 
@@ -250,6 +252,15 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": "npm:^27.0.0"
   checksum: 10c0/b8d41098ba6fc194d13d641f9441347e3a3b96c0efabac0e14f57319340a2d4d1c8676e4cb37ab3062c5c323c617e790b0126916e9bf7b201b0cced0826f8ae2
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.0.0":
+  version: 22.19.15
+  resolution: "@types/node@npm:22.19.15"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/f17eaf3d0d1da5e93ad9e287efb78201f8a5282973c004c5f70d91675c5c6b926a23acaa7b158a42b3d7e27e36b349d65a531710c91c308fca53dd7fa280ef98
   languageName: node
   linkType: hard
 
@@ -723,6 +734,33 @@ __metadata:
   version: 0.0.6
   resolution: "tunnel@npm:0.0.6"
   checksum: 10c0/e27e7e896f2426c1c747325b5f54efebc1a004647d853fad892b46d64e37591ccd0b97439470795e5262b5c0748d22beb4489a04a0a448029636670bfd801b75
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.9.3":
+  version: 5.9.3
+  resolution: "typescript@npm:5.9.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/6bd7552ce39f97e711db5aa048f6f9995b53f1c52f7d8667c1abdc1700c68a76a308f579cd309ce6b53646deb4e9a1be7c813a93baaf0a28ccd536a30270e1c5
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.9.3#optional!builtin<compat/typescript>":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=b45daf"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/6f7e53bf0d9702350deeb6f35e08b69cbc8b958c33e0ec77bdc0ad6a6c8e280f3959dcbfde6f5b0848bece57810696489deaaa53d75de3578ff255d168c1efbd
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
