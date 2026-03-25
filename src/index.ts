@@ -14,7 +14,8 @@ async function executeCommand(): Promise<void> {
     const stage = core.getInput("stage", { required: true });
     const apiId = core.getInput("api-id", { required: true });
     const apiKey = core.getInput("api-key", { required: true });
-    const sourceMetadata = getSourceMetadata();
+    const jobId = core.getInput("job-id") || undefined;
+    const sourceMetadata = getSourceMetadata(jobId);
     const cloudUrl = core.getInput("cloud-url") || null;
 
     const args: string[] = [

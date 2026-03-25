@@ -22,6 +22,10 @@ inputs:
   cloud-url:
     description: "The URL of the Nitro registry"
     required: false
+  job-id:
+    description: "The ID of the current job"
+    required: false
+    default: ${{ job.check_run_id }}
 
 runs:
   using: "node20"
