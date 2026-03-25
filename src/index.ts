@@ -18,6 +18,8 @@ async function executeCommand(): Promise<void> {
     const sourceMetadata = getSourceMetadata(jobId);
     const cloudUrl = core.getInput("cloud-url") || null;
 
+    const sourceSchemas = core.getMultilineInput("source-schemas", { required: true });
+
     const args: string[] = [
       "fusion",
       "publish",
@@ -30,6 +32,10 @@ async function executeCommand(): Promise<void> {
       "--source-metadata",
       JSON.stringify(sourceMetadata),
     ];
+
+    for (const sourceSchema of sourceSchemas) {
+      args.push("--source-schema", sourceSchema);
+    }
 
     if (cloudUrl) {
       args.push("--cloud-url", cloudUrl);

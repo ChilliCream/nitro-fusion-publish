@@ -7,7 +7,7 @@ branding:
 
 inputs:
   tag:
-    description: "The tag of the schema version to deploy"
+    description: "The tag of the source schema version"
     required: true
   stage:
     description: "The name of the stage"
@@ -19,6 +19,9 @@ inputs:
     description: "API key for authentication"
     required: true
     secret: true
+  source-schemas:
+    description: "Source schemas to include in the composition (e.g. 'example' or 'example@1.0.0'). If no version is specified, the tag value is used."
+    required: true
   cloud-url:
     description: "The URL of the Nitro registry"
     required: false
