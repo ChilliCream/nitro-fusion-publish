@@ -16,6 +16,8 @@ async function executeCommand(): Promise<void> {
     const apiKey = core.getInput("api-key", { required: true });
     const jobId = core.getInput("job-id") || undefined;
     const sourceMetadata = getSourceMetadata(jobId);
+    const force = core.getBooleanInput("force");
+    const waitForApproval = core.getBooleanInput("wait-for-approval");
     const cloudUrl = core.getInput("cloud-url") || null;
 
     const sourceSchemas = core.getMultilineInput("source-schemas", { required: true });
@@ -35,6 +37,14 @@ async function executeCommand(): Promise<void> {
 
     for (const sourceSchema of sourceSchemas) {
       args.push("--source-schema", sourceSchema);
+    }
+
+    if (force) {
+      args.push("--force");
+    }
+
+    if (waitForApproval) {
+      args.push("--wait-for-approval");
     }
 
     if (cloudUrl) {

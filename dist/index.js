@@ -39947,6 +39947,8 @@ async function executeCommand() {
         const apiKey = getInput("api-key", { required: true });
         const jobId = getInput("job-id") || undefined;
         const sourceMetadata = getSourceMetadata(jobId);
+        const force = getBooleanInput("force");
+        const waitForApproval = getBooleanInput("wait-for-approval");
         const cloudUrl = getInput("cloud-url") || null;
         const sourceSchemas = getMultilineInput("source-schemas", { required: true });
         const args = [
@@ -39963,6 +39965,12 @@ async function executeCommand() {
         ];
         for (const sourceSchema of sourceSchemas) {
             args.push("--source-schema", sourceSchema);
+        }
+        if (force) {
+            args.push("--force");
+        }
+        if (waitForApproval) {
+            args.push("--wait-for-approval");
         }
         if (cloudUrl) {
             args.push("--cloud-url", cloudUrl);

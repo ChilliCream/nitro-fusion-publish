@@ -22,6 +22,14 @@ inputs:
   source-schemas:
     description: "Source schemas to include in the composition (e.g. 'example' or 'example@1.0.0'). If no version is specified, the tag value is used."
     required: true
+  force:
+    description: "Continue publishing even if breaking changes or validation errors are detected."
+    required: false
+    default: "false"
+  wait-for-approval:
+    description: "Require approval in the Nitro UI to continue publishing when breaking changes or validation errors are detected."
+    required: false
+    default: "false"
   cloud-url:
     description: "The URL of the Nitro registry"
     required: false
