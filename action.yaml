@@ -22,6 +22,9 @@ inputs:
   source-schemas:
     description: "Source schemas to include in the composition (e.g. 'example' or 'example@1.0.0'). If no version is specified, the tag value is used."
     required: true
+  legacy-v1-archive:
+    description: "The path to a Fusion v1 archive file."
+    required: false
   force:
     description: "Continue publishing even if breaking changes or validation errors are detected."
     required: false

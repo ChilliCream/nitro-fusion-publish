@@ -19,6 +19,7 @@ async function executeCommand(): Promise<void> {
     const force = core.getBooleanInput("force");
     const waitForApproval = core.getBooleanInput("wait-for-approval");
     const cloudUrl = core.getInput("cloud-url") || null;
+    const legacyV1Archive = core.getInput("legacy-v1-archive") || null;
 
     const sourceSchemas = core.getMultilineInput("source-schemas", { required: true });
 
@@ -37,6 +38,10 @@ async function executeCommand(): Promise<void> {
 
     for (const sourceSchema of sourceSchemas) {
       args.push("--source-schema", sourceSchema);
+    }
+
+    if (legacyV1Archive) {
+      args.push("--legacy-v1-archive", legacyV1Archive);
     }
 
     if (force) {

@@ -39953,6 +39953,7 @@ async function executeCommand() {
         const force = getBooleanInput("force");
         const waitForApproval = getBooleanInput("wait-for-approval");
         const cloudUrl = getInput("cloud-url") || null;
+        const legacyV1Archive = getInput("legacy-v1-archive") || null;
         const sourceSchemas = getMultilineInput("source-schemas", { required: true });
         const args = [
             "fusion",
@@ -39968,6 +39969,9 @@ async function executeCommand() {
         ];
         for (const sourceSchema of sourceSchemas) {
             args.push("--source-schema", sourceSchema);
+        }
+        if (legacyV1Archive) {
+            args.push("--legacy-v1-archive", legacyV1Archive);
         }
         if (force) {
             args.push("--force");
